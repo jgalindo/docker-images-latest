@@ -8,5 +8,8 @@
 # Update this file when a new LTS version is released
 FROM node:24
 
+# nx is v21 at the time of writing
+# I'm going to tag this image with the version of nx
+RUN npm add --global nx
 # Angular is v20 at the time of writing
 RUN npm install -g @angular/cli
