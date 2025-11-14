@@ -10,3 +10,12 @@ FROM node:24
 
 # Angular is v20 at the time of writing
 RUN npm install -g @angular/cli
+
+# Install Chromium for headless testing
+RUN apt-get update && \
+    apt-get install -y chromium --no-install-recommends && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# Set the CHROME_BIN environment variable for Karma
+ENV CHROME_BIN=/usr/bin/chromium
