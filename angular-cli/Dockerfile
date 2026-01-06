@@ -19,3 +19,8 @@ RUN apt-get update && \
 
 # Set the CHROME_BIN environment variable for Karma
 ENV CHROME_BIN=/usr/bin/chromium
+ 
+# Ensure the app directory exists, is owned by the `node` user, and switch to that user
+WORKDIR /app
+RUN mkdir -p /app && chown -R node:node /app
+USER node
