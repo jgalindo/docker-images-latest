@@ -1,14 +1,15 @@
 # Node.js current, active, and maintenance LTS versions
 # https://nodejs.org/en/about/releases/
-# current LTS: 24.x
-# active LTS: 22.x
-# maintenance LTS: 20.x
+# current: 25.x
+# active LTS: 24.x
+# maintenance LTS: 22.x
 # Next LTS: 26.x
 # Node.js 26 LTS will begin mid April 2026
 # Update this file when a new LTS version is released
 FROM node:24
 
-# Angular is v20 at the time of writing
+# Angular is v21 (Active) at the time of writing
+# https://angular.dev/reference/releases#support-window
 RUN npm install -g @angular/cli
 
 # Install Chromium for headless testing
